@@ -1,6 +1,6 @@
 import { Button, Dropdown, Menu} from 'antd';
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './../resources/defaultlayout.css'
 
 const DefaultLayout = (props) => {
@@ -8,14 +8,14 @@ const DefaultLayout = (props) => {
   const menu = (
    <Menu>
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="/home">
+        <Link to="/home">
           Home
-        </a>
+        </Link>
       </Menu.Item>
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="/profile">
+        <Link to="/profile">
           Profile
-        </a>
+        </Link>
       </Menu.Item>
       <Menu.Item onClick={()=>{
         // session to be removed from local storage here

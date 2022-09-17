@@ -10,16 +10,36 @@ button{
   box-shadow:none !important;
   outline:none !important;
   border: none !important;
+  color: white!important;
 
 }
-input{
+input, textarea {
   box-shadow: none!important;
   outline: none !important;
   border:1px solid gray;
 
 }
 
-input:focus{
+input:focus, textarea:focus{
   outline: none !important;
   box-shadow: none!important;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+@media (min-width: 992px) {
+  .col-md-12 {
+      grid-column: span 12;
+  }
+}
+.ant-btn-dashed{
+  background: white!important;
+  color: black!important;
+  border:1px dashed gray!important;
+  width:200px!important;
+
 }
