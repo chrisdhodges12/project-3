@@ -4,14 +4,14 @@ import {Link} from 'react-router-dom';
 import './../resources/authentication.css'
 
 
-const Login = () => {
+const Register = () => {
   const onFinish = (values) => {
     console.log(values);
   };
   return (
     <div className="auth-parent">
       <Form layout="vertical" onFinish={onFinish}>
-        <h1>Login</h1>
+        <h1>Register</h1>
         <hr></hr>
         <Form.Item name="username" label="Username">
           <Input placeholder="username" />
@@ -19,15 +19,19 @@ const Login = () => {
         <Form.Item name="password" label="Password">
           <Input />
         </Form.Item>
+        <Form.Item name="cpassword" label="Confirm Password">
+          <Input />
+        </Form.Item>
         <div className='linkButton'>
-          <Link>Click here to Register</Link>
+          <Link to='/login'>Click here to Login</Link>
           <Button type="primary" htmlType="submit">
-            Login
+            Register
           </Button>
         </div>
+        
       </Form>
     </div>
   );
 };
 
-export default Login;
+export default Register;
