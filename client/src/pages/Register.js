@@ -64,7 +64,7 @@ const Register = () => {
               />
               <input
                 className=''
-                placeholder='******'
+                placeholder='Password'
                 name='password'
                 type='password'
                 id='password'

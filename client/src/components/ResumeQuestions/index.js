@@ -8,35 +8,20 @@ import { setContext } from "@apollo/client/link/context";
 
 const ResumeQuestions = () => {
    const [inputValues, setInputValues] = useState({
-       firstName: '', lastName: '',
+       firstName: '',
+       lastName: '',
+       email: '',
+       phone: '',
+       objectiveStatement: '',
+       schoolName: '',
+       graduationDate: '',
+       fieldOfStudy: '',
+       pastEmployer: '',
+       datesWorked: '',
+       position: ''
    });
 
-   const [updateResume, { error }] = useMutation(UPDATE_RESUME, {
-        update(cache, { data: { addThought } }) {
-
-            //COULD POTENTIALLY NOT EXIST YET SO WRAP IN A TRY/CATCH
-            try {
-                //update me array's cache
-                const { me } = cache.readQuery({ query: QUERY_ME });
-                cache.writeQuery({
-                    query: QUERY_ME,
-                    data: { me: { ...me, savedResumes: [...me.savedResumes, updateResume] } },
-                });
-            } catch (e) {
-                console.warn("First resume by user!")
-            }
-
-            //update thought array's cache
-            //read whats currently in the cache
-            const { resumes } = cache.readQuery({ query: QUERY_RESUMES });
-
-            //prepend the newest thought to the front of the array
-            cache.writeQuery({
-                query: QUERY_RESUMES,
-                data: { resumes: [updateResume, ...resumes]}
-            });
-        }
-    })
+   const [updateResume, { error }] = useMutation(UPDATE_RESUME)
 
    const handleChange = event => {
     //    const { name, value } = event.target;
@@ -50,7 +35,7 @@ const ResumeQuestions = () => {
            await updateResume({
                variables: { inputValues }
            });
-           setInputValues('');
+
            window.location.assign('/profile');
        } catch (e) {
            console.error(e);
