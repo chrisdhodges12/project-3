@@ -5,6 +5,7 @@ export const QUERY_RESUMES = gql`
   query resumes($username: String) {
     resumes(username: $username) {
         _id
+        username
         firstName
         lastName
         email
@@ -25,6 +26,7 @@ export const QUERY_RESUME = gql`
   query resume($id: ID!) {
     resume(_id: $id) {
         _id
+        username
         firstName
         lastName
         email
@@ -47,7 +49,7 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      savedResume {
+      savedResumes {
         _id
         firstName
         lastName
@@ -71,7 +73,7 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      savedResume {
+      savedResumes {
         _id
         firstName
         lastName

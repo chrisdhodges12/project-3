@@ -1,13 +1,16 @@
 const { Schema, model } = require("mongoose");
 
 const resumeSchema = new Schema({
+  username: {
+    type: String,
+    required: true
+  },
   firstName: {
     type: String,
-    required: true,
+
   },
   lastName: {
     type: String,
-    required: true,
   },
   email: {
     type: String,
@@ -35,7 +38,7 @@ const resumeSchema = new Schema({
   },
   position: {
     type: String,
-  },
+  }
 });
 
 const Resume = model("Resume", resumeSchema);
