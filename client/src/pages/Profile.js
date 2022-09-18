@@ -1,29 +1,50 @@
-import React from "react";
-import DefaultLayout from "../components/DefaultLayout";
-import { Form, Tabs, Button } from "antd";
-import PersonalInfo from "../components/PersonalInfo";
-import Education from "../components/Education";
+import React from 'react';
+
+import { useParams } from 'react-router-dom';
+
+import ResumeTemplate from '../components/ResumeTemplate';
+
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from '../utils/queries';
+
+import Auth from '../utils/auth';
+
 
 const Profile = () => {
-  return (
-    <DefaultLayout>
-      <div className="update-profile">
-        <h2>Update Profile</h2>
-        <Form layout="vertical" onFinish={(values) => console.log(values)}>
-          <Tabs defaultActiveKey="1">
-            <Tabs.TabPane tab="Personal Info" key="1">
-              <PersonalInfo />
-            </Tabs.TabPane>
-            <Tabs.TabPane tab="Education and Experience" key="2">
-              <Education />
-            </Tabs.TabPane>
-          </Tabs>
 
-          <Button htmlType="submit">UPDATE</Button>
-        </Form>
+  const loggedIn = Auth.loggedIn();
+
+  const { username: userParam } = useParams();
+
+  const { loading, data } = useQuery(QUERY_ME, {
+    variables: { username: userParam }
+  });
+
+  const user = data?.me || {};
+
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      <div className="">
+        <h2 className="">
+        {user.username}'s Resumes
+        </h2>
       </div>
-    </DefaultLayout>
+
+      <div className="flex-row justify-space-between mb-3">
+        <div className="col-12 mb-3 col-lg-8">
+
+          <ResumeTemplate savedResumes={user.savedResumes} />
+        </div>
+
+      </div>
+    </div>
   );
 };
 
 export default Profile;
+

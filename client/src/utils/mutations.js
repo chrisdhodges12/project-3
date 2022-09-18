@@ -13,21 +13,21 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
+    mutation addUser($username: String!, $email: String!, $password: String!) {
+        addUser(username: $username, email: $email, password: $password) {
+            token
+            user {
+                _id
+                username
+            }
+        }
     }
-  }
 `;
 
 export const UPDATE_RESUME = gql`
     mutation updateResume(
-        $firstName: String!,
-        $lastName: String!,
+        $firstName: String,
+        $lastName: String,
         $email: String,
         $phone: String,
         $objectiveStatement: String,
@@ -52,6 +52,7 @@ export const UPDATE_RESUME = gql`
                 position: $position)
                 {
                     _id
+                    username
                     firstName
                     lastName
                     email
@@ -65,5 +66,4 @@ export const UPDATE_RESUME = gql`
                     position
                 }
         }
-  }
 `;

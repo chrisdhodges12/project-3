@@ -18,7 +18,7 @@ const Education = () => {
                       {...restField}
                       name={[name, "fieldOfStudy"]}
                       rules={[
-                        { required: true, message: "Missing field of studye" },
+                        { required: true, message: "Missing field of study" },
                       ]}
                     >
                       <Input placeholder="Field of Study" />
