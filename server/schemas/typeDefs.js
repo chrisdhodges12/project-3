@@ -5,12 +5,13 @@ const typeDefs = gql`
     _id: ID
     username: String!
     email: String!
-    savedResume: [Resume]
+    savedResumes: [Resume]
   }
   type Resume {
     _id: ID
-    firstName: String!
-    lastName: String!
+    username: String
+    firstName: String
+    lastName: String
     email: String
     phone: String
     objectiveStatement: String
@@ -32,8 +33,8 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     updateResume(
-      firstName: String!,
-      lastName: String!,
+      firstName: String,
+      lastName: String,
       email: String,
       phone: String,
       objectiveStatement: String,

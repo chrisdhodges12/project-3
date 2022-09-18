@@ -21,7 +21,7 @@ const userSchema = new Schema(
       required: true,
       minLength: 5
     },
-   savedResume: [{
+   savedResumes: [{
         type: Schema.Types.ObjectId,
         ref: 'Resume'
     }],

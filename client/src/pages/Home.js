@@ -1,13 +1,19 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
-import DefaultLayout from '../components/DefaultLayout'
+import React from "react";
+import Auth from '../utils/auth'
+import ResumeQuestions from "../components/ResumeQuestions";
 
 const Home = () => {
-  return (
-    <DefaultLayout>
-        <h1> This is home page</h1>
-    </DefaultLayout>
-  )
-}
 
-export default Home
+
+  return (
+    <main>
+            <div className="">
+            <p>Fill out the form!</p>
+                <ResumeQuestions />
+               
+            </div>
+    </main>
+  );
+};
+
+export default Home;
