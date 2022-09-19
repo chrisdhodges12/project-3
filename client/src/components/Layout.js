@@ -5,9 +5,8 @@ import Header from "./Header";
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(5),
     marginBottom: theme.spacing(2),
-    border: "1px solid black",
   },
     footer: {
         display: "flex",
