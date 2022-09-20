@@ -6,6 +6,7 @@ export const QUERY_RESUMES = gql`
     resumes(username: $username) {
         _id
         username
+        createdAt
         firstName
         lastName
         email
@@ -17,6 +18,7 @@ export const QUERY_RESUMES = gql`
         pastEmployer
         datesWorked
         position
+        skills
     }
   }
 `;
@@ -27,6 +29,7 @@ export const QUERY_RESUME = gql`
     resume(_id: $id) {
         _id
         username
+        createdAt
         firstName
         lastName
         email
@@ -38,6 +41,7 @@ export const QUERY_RESUME = gql`
         pastEmployer
         datesWorked
         position
+        skills
     }
   }
 `;
@@ -52,6 +56,7 @@ export const QUERY_USER = gql`
       resumes {
         username
         _id
+        createdAt
         firstName
         lastName
         email
@@ -63,6 +68,7 @@ export const QUERY_USER = gql`
         pastEmployer
         datesWorked
         position
+        skills
       }
     }
   }
@@ -77,6 +83,7 @@ export const QUERY_ME = gql`
       resumes {
         _id
         username
+        createdAt
         firstName
         lastName
         email
@@ -88,6 +95,7 @@ export const QUERY_ME = gql`
         pastEmployer
         datesWorked
         position
+        skills
       }
     }
   }

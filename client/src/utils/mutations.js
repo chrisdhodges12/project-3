@@ -26,7 +26,6 @@ export const ADD_USER = gql`
 
 export const UPDATE_RESUME = gql`
     mutation updateResume(
-        $username: String,
         $firstName: String,
         $lastName: String,
         $email: String,
@@ -37,10 +36,10 @@ export const UPDATE_RESUME = gql`
         $fieldOfStudy: String,
         $pastEmployer: String,
         $datesWorked: String,
-        $position: String)
+        $position: String,
+        $skills: [String])
         {
             updateResume(
-                username: $username,
                 firstName: $firstName,
                 lastName: $lastName,
                 email: $email,
@@ -51,10 +50,12 @@ export const UPDATE_RESUME = gql`
                 fieldOfStudy: $fieldOfStudy,
                 pastEmployer: $pastEmployer,
                 datesWorked: $datesWorked,
-                position: $position)
+                position: $position
+                skills: $skills)
                 {
                     _id
                     username
+                    createdAt
                     firstName
                     lastName
                     email
@@ -66,6 +67,7 @@ export const UPDATE_RESUME = gql`
                     pastEmployer
                     datesWorked
                     position
+                    skills
                 }
         }
 `;

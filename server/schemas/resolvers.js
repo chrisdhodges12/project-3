@@ -23,7 +23,7 @@ const resolvers = {
 
     resumes: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Resume.find(params);
+      return Resume.find(params).sort({ createdAt: -1 });
     },
 
     //get All users

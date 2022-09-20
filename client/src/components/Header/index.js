@@ -59,14 +59,14 @@ function Header() {
   return (
     <AppBar color="transparent" className={classes.appbar} position="static">
       <Toolbar color="none">
-        <Typography
-          className={classes.logoLg}
-          variant="logo"
-          component="div"
-          sx={{ flexGrow: 1 }}
-        >
-          Resume Builder
-        </Typography>
+          <Typography
+            className={classes.logoLg}
+            variant="logo"
+            component="div"
+            sx={{ flexGrow: 1 }}
+          >
+            Resume Builder
+          </Typography>
         <Typography
           className={classes.logoSm}
           variant="logo"
@@ -110,7 +110,7 @@ function Header() {
             <MenuItem onClick={handleClose}>Dashboard</MenuItem>
           </NavLink> */}
               <NavLink to="/profile">
-                <MenuItem onClick={handleClose}>Resume</MenuItem>
+                <MenuItem onClick={handleClose}>Resumes</MenuItem>
               </NavLink>
               <NavLink to="/">
                 <MenuItem onClick={handleClose && logout}>Logout</MenuItem>

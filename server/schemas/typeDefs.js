@@ -10,6 +10,7 @@ const typeDefs = gql`
   type Resume {
     _id: ID
     username: String
+    createdAt: String
     firstName: String
     lastName: String
     email: String
@@ -21,6 +22,7 @@ const typeDefs = gql`
     pastEmployer: String
     datesWorked: String
     position: String
+    skills: [String]
   }
   type Query {
     me: User
@@ -45,6 +47,7 @@ const typeDefs = gql`
       pastEmployer: String,
       datesWorked: String,
       position: String
+      skills: [String]
     ): Resume
   }
   type Auth {
