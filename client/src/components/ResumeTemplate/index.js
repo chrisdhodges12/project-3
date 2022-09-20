@@ -1,17 +1,21 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import {  Box, Grid } from "@material-ui/core";
 
 
-const ResumeTemplate = ({ savedResumes }) => {
-    // if (!savedResumes.length) {
+const ResumeTemplate = ({ resumes }) => {
+    // if (!resumes.length) {
     //     return <h3> No resumes yet. Create one! </h3>;
 
     return (
-        <div>
-            <h3> Resumes!! </h3>
-            {savedResumes &&
-                savedResumes.map(resume => (
-                    <div key={resume._id}>
+        
+        <Grid direction="column" container >
+            {resumes &&
+                resumes.map(resume => (
+                    <Grid item>
+                    <div key={[resume._id]}>
+                       <h1>_________________</h1> 
+                        
                         <p>
                             {resume.firstName} {' '} {resume.lastName}
                         </p>
@@ -43,9 +47,10 @@ const ResumeTemplate = ({ savedResumes }) => {
                             {resume.position}
                         </p>
                     </div>
+                    </Grid>
             ))}
-        </div>
-    )
-}
+        </Grid>
+    )    
+};
 
 export default ResumeTemplate;

@@ -3,11 +3,9 @@ const { Schema, model } = require("mongoose");
 const resumeSchema = new Schema({
   username: {
     type: String,
-  
   },
   firstName: {
     type: String,
-
   },
   lastName: {
     type: String,

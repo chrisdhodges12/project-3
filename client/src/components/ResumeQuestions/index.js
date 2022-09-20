@@ -3,44 +3,52 @@ import React, { useState } from "react";
 import { useMutation } from '@apollo/client';
 import { UPDATE_RESUME  } from '../../utils/mutations';
 import { QUERY_RESUMES, QUERY_ME } from '../../utils/queries';
-import { setContext } from "@apollo/client/link/context";
 
 
-const ResumeQuestions = () => {
-   const [inputValues, setInputValues] = useState({
-       firstName: '',
-       lastName: '',
-       email: '',
-       phone: '',
-       objectiveStatement: '',
-       schoolName: '',
-       graduationDate: '',
-       fieldOfStudy: '',
-       pastEmployer: '',
-       datesWorked: '',
-       position: ''
+const ResumeQuestions = (props) => {
+    
+   const [formState, setFormState] = useState({
+       firstName: "",
+       lastName: "",
+       email: "",
+       phone: "",
+       objectiveStatement: "",
+       schoolName: "",
+       graduateYear: "",
+       fieldOfStudy: "",
+       pastEmployer: "",
+       datesWorked: "",
+       position: ""
    });
 
    const [updateResume, { error }] = useMutation(UPDATE_RESUME)
 
-   const handleChange = event => {
-    //    const { name, value } = event.target;
-       setInputValues(event.target.value);
-   };
 
-   const handleFormSubmit = async event => {
+   const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+    console.log(event.target.name)
+  };
+
+   const handleFormSubmit = async (event) => {
        event.preventDefault();
+       console.log(setFormState.position);
+       console.log(formState.lastName);
 
        try {
-           await updateResume({
-               variables: { inputValues }
-           });
+          await updateResume({
+              variables: { ...formState },
+          });
 
-           window.location.assign('/profile');
        } catch (e) {
            console.error(e);
        }
-   }
+           window.location.assign('/profile');
+   };
 
     return (
         <div>
@@ -48,72 +56,106 @@ const ResumeQuestions = () => {
                 onSubmit={handleFormSubmit}
             >
 
-                <textarea
+                <input
+                    className=""
                     placeholder="First Name"
-                    value={inputValues.firstName}
-                    className=''
+                    name="firstName"
+                    type="name"
+                    id="firstName"
+
+                    value={formState.firstName}
                     onChange={handleChange}
-                ></textarea>
-                <textarea
+                ></input>
+                <input
+                    className=""
                     placeholder="Last Name"
-                    value={inputValues.lastName}
-                    className=''
+                    name="lastName"
+                    type="name"
+                    id="lastName"
+                    value={formState.lastName}
                     onChange={handleChange}
-                ></textarea>
-                <textarea
+                ></input>
+                <input
+                    className=""
                     placeholder="Email"
-                    value={inputValues.email}
-                    className=''
+                    name="email"
+                    type="email"
+                    id="email"
+                    value={formState.email}
                     onChange={handleChange}
-                ></textarea>
-                <textarea
+                ></input>
+                <input
+                    className=""
                     placeholder="Phone"
-                    value={inputValues.phone}
-                    className=''
+                    name="phone"
+                    type="phone"
+                    id="phone"
+                    value={formState.phone}
                     onChange={handleChange}
-                ></textarea>
-                <textarea
+                ></input>
+                <input
+                    className=""
                     placeholder="Objective Statement"
-                    value={inputValues.objectiveStatement}
-                    className=''
+                    name="objectiveStatement"
+                    type="objectiveStatement"
+                    id="objectiveStatement"
+                    value={formState.objectiveStatement}
                     onChange={handleChange}
-                ></textarea>
-                <textarea
+                ></input>
+                <input
+                    className=""
                     placeholder="School Name"
-                    value={inputValues.schoolName}
-                    className=''
+                    name="schoolName"
+                    type="schoolName"
+                    id="schoolName"
+                    value={formState.schoolName}
                     onChange={handleChange}
-                ></textarea>
-                <textarea
+                ></input>
+                <input
+                    className=""
                     placeholder="Graduation Date"
-                    value={inputValues.graduateYear}
-                    className=''
+                    name="graduateYear"
+                    type="graduateYear"
+                    id="graduateYear"
+                    value={formState.graduateYear}
                     onChange={handleChange}
-                ></textarea>
-                <textarea
+                ></input>
+                <input
+                    className=""
                     placeholder="Degree/ Field of Study"
-                    value={inputValues.fieldOfStudy}
-                    className=''
+                    name="fieldOfStudy"
+                    type="fieldOfStudy"
+                    id="fieldOfStudy"
+                    value={formState.fieldOfStudy}
                     onChange={handleChange}
-                ></textarea>
-                <textarea
+                ></input>
+                <input
+                    className=""
                     placeholder="Past Employer"
-                    value={inputValues.pastEmployer}
-                    className=''
+                    name="pastEmployer"
+                    type="pastEmployer"
+                    id="pastEmployer"
+                    value={formState.pastEmployer}
                     onChange={handleChange}
-                ></textarea>
-                <textarea
+                ></input>
+                <input
+                    className=""
                     placeholder="Dates Worked"
-                    value={inputValues.datesWorked}
-                    className=''
+                    name="datesWorked"
+                    type="datesWorked"
+                    id="datesWorked"
+                    value={formState.datesWorked}
                     onChange={handleChange}
-                ></textarea>
-                <textarea
+                ></input>
+                <input
+                    className=""
                     placeholder="Employee Role"
-                    value={inputValues.position}
-                    className=''
+                    name="position"
+                    type="position"
+                    id="position"
+                    value={formState.position}
                     onChange={handleChange}
-                ></textarea>
+                ></input>
                 <button className="" type="submit">
                     Submit
                 </button>

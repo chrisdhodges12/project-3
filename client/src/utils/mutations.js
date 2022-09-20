@@ -26,6 +26,7 @@ export const ADD_USER = gql`
 
 export const UPDATE_RESUME = gql`
     mutation updateResume(
+        $username: String,
         $firstName: String,
         $lastName: String,
         $email: String,
@@ -39,6 +40,7 @@ export const UPDATE_RESUME = gql`
         $position: String)
         {
             updateResume(
+                username: $username,
                 firstName: $firstName,
                 lastName: $lastName,
                 email: $email,

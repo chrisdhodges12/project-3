@@ -141,6 +141,7 @@ const Register = () => {
       </Grid>
       <form onSubmit={handleFormSubmit}>
         <Grid item xs={12} sm={12} md={6} lg={6} className={classes.loginCont}>
+          <h2>SignUp</h2>
           <input
             className={classes.input}
             placeholder="Your Username"
@@ -159,7 +160,7 @@ const Register = () => {
             value={formState.username}
             onChange={handleChange}
           />
-         
+
           <input
             className={classes.input}
             placeholder="Your email"
@@ -180,7 +181,7 @@ const Register = () => {
           />
           <input
             className=""
-            placeholder="******"
+            placeholder="Password"
             style={{
               padding: "10px",
               background: "rgba(255, 255, 255, 0.9)",
@@ -208,6 +209,24 @@ const Register = () => {
               padding: "10px",
             }}
           >
+            <button
+              type="submit"
+              style={{
+                padding: "12px",
+                minWidth: "13vw",
+                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                borderRadius: "9px",
+                boxSizing: "border-box",
+                border: "none",
+
+                background:
+                  "linear-gradient(180deg, rgba(247, 199, 114, 0.89) 0%, rgba(245, 183, 0, 0.53) 100%)",
+              }}
+            >
+              <Typography variant="h6" className={classes.submit}>
+                Submit
+              </Typography>
+            </button>
             <NavLink to="/login">
               <button
                 type="redirect"
@@ -231,24 +250,6 @@ const Register = () => {
                 </Typography>
               </button>
             </NavLink>
-            <button
-              type="submit"
-              style={{
-                padding: "12px",
-                minWidth: "13vw",
-                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                borderRadius: "9px",
-                boxSizing: "border-box",
-                border: "none",
-
-                background:
-                  "linear-gradient(180deg, rgba(247, 199, 114, 0.89) 0%, rgba(245, 183, 0, 0.53) 100%)",
-              }}
-            >
-              <Typography variant="h6" className={classes.submit}>
-                Submit
-              </Typography>
-            </button>
           </Box>
 
           {error && <div>Login Failed</div>}
@@ -259,48 +260,3 @@ const Register = () => {
 };
 
 export default Register;
-
-{
-  /* <main className="">
-<div className="">
-  <div className="">
-    <h4 className="">Sign Up</h4>
-    <div className="">
-      <form onSubmit={handleFormSubmit}>
-        <input
-          className=""
-          placeholder="Your username"
-          name="username"
-          type="username"
-          id="username"
-          value={formState.username}
-          onChange={handleChange}
-        />
-        <input
-          className=""
-          placeholder="Your email"
-          name="email"
-          type="email"
-          id="email"
-          value={formState.email}
-          onChange={handleChange}
-        />
-        <input
-          className=""
-          placeholder="Password"
-          name="password"
-          type="password"
-          id="password"
-          value={formState.password}
-          onChange={handleChange}
-        />
-        <button className="" type="submit">
-          Submit
-        </button>
-      </form>
-      {error && <div>Sign up failed</div>}
-    </div>
-  </div>
-</div>
-</main> */
-}

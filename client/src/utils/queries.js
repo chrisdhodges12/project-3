@@ -49,7 +49,8 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      savedResumes {
+      resumes {
+        username
         _id
         firstName
         lastName
@@ -73,8 +74,9 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      savedResumes {
+      resumes {
         _id
+        username
         firstName
         lastName
         email

@@ -9,7 +9,7 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("savedResumes");
+          .populate("resumes");
 
         return userData;
       }
@@ -21,18 +21,23 @@ const resolvers = {
       return Resume.findOne({ _id });
     },
 
+    resumes: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Resume.find(params);
+    },
+
     //get All users
     users: async () => {
         return User.find()
          .select('-__v -password')
-         .populate('savedResumes')
+         .populate('resumes')
     },
 
     //get a user by username
     user: async (parent, { username }) => {
         return User.findOne({ username })
          .select('-__v -password')
-         .populate('savedResumes')
+         .populate('resumes')
     },
   },
   Mutation: {
@@ -68,7 +73,7 @@ const resolvers = {
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { savedResumes: resume._id } },
+          { $push: { resumes: resume._id } },
           { new: true }
         );
 
