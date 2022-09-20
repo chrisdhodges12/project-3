@@ -141,6 +141,7 @@ const Register = () => {
       </Grid>
       <form onSubmit={handleFormSubmit}>
         <Grid item xs={12} sm={12} md={6} lg={6} className={classes.loginCont}>
+          <h2>SignUp</h2>
           <input
             className={classes.input}
             placeholder="Your Username"

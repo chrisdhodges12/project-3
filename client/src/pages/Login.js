@@ -135,6 +135,7 @@ const Login = (props) => {
   };
 
   return (
+    
     <Grid direction="row" container spacing={3} className={classes.loginPage}>
       <Grid item xs={12} sm={12} md={6} lg={6} className={classes.resumeCont}>
         {/* <Box className={classes.resumeCont}> */}
@@ -145,6 +146,9 @@ const Login = (props) => {
       </Grid>
       <form onSubmit={handleFormSubmit}>
         <Grid item xs={12} sm={12} md={6} lg={6} className={classes.loginCont}>
+          <h2>
+            LOGIN
+          </h2>
           <input
             className={classes.input}
             placeholder="Your email"

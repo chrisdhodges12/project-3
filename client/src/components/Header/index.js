@@ -109,7 +109,7 @@ function Header() {
               {/* <NavLink to="/dashboard">
             <MenuItem onClick={handleClose}>Dashboard</MenuItem>
           </NavLink> */}
-              <NavLink to="/">
+              <NavLink to="/profile">
                 <MenuItem onClick={handleClose}>Resume</MenuItem>
               </NavLink>
               <NavLink to="/">

@@ -2,15 +2,15 @@
 import React from "react";
 
 
-const ResumeTemplate = ({ savedResumes }) => {
-    // if (!savedResumes.length) {
+const ResumeTemplate = ({ resumes }) => {
+    // if (!resumes.length) {
     //     return <h3> No resumes yet. Create one! </h3>;
 
     return (
         <div>
             <h3> Resumes!! </h3>
-            {savedResumes &&
-                savedResumes.map(resume => (
+            {resumes &&
+                resumes.map(resume => (
                     <div key={resume._id}>
                         <p>
                             {resume.firstName} {' '} {resume.lastName}
