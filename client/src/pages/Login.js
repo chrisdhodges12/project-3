@@ -135,7 +135,6 @@ const Login = (props) => {
   };
 
   return (
-    
     <Grid direction="row" container spacing={3} className={classes.loginPage}>
       <Grid item xs={12} sm={12} md={6} lg={6} className={classes.resumeCont}>
         {/* <Box className={classes.resumeCont}> */}
@@ -146,9 +145,7 @@ const Login = (props) => {
       </Grid>
       <form onSubmit={handleFormSubmit}>
         <Grid item xs={12} sm={12} md={6} lg={6} className={classes.loginCont}>
-          <h2>
-            LOGIN
-          </h2>
+          <h2>LOGIN</h2>
           <input
             className={classes.input}
             placeholder="Your email"
@@ -198,6 +195,24 @@ const Login = (props) => {
               padding: "10px",
             }}
           >
+            <button
+              type="submit"
+              style={{
+                padding: "12px",
+                minWidth: "13vw",
+                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                borderRadius: "9px",
+                boxSizing: "border-box",
+                border: "none",
+
+                background:
+                  "linear-gradient(180deg, rgba(247, 199, 114, 0.89) 0%, rgba(245, 183, 0, 0.53) 100%)",
+              }}
+            >
+              <Typography variant="h6" className={classes.submit}>
+                Submit
+              </Typography>
+            </button>
             <NavLink to="/register">
               <button
                 type="redirect"
@@ -221,24 +236,6 @@ const Login = (props) => {
                 </Typography>
               </button>
             </NavLink>
-            <button
-              type="submit"
-              style={{
-                padding: "12px",
-                minWidth: "13vw",
-                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                borderRadius: "9px",
-                boxSizing: "border-box",
-                border: "none",
-
-                background:
-                  "linear-gradient(180deg, rgba(247, 199, 114, 0.89) 0%, rgba(245, 183, 0, 0.53) 100%)",
-              }}
-            >
-              <Typography variant="h6" className={classes.submit}>
-                Submit
-              </Typography>
-            </button>
           </Box>
 
           {error && <div>Login Failed</div>}
