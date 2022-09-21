@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(10),
     justifyContent: "space-between",
     padding: theme.spacing(5),
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center",
+      width: "fit-content",
+      padding: "0",
+      margin: "0",
+    },
   },
   resumeCont: {
     alignSelf: "stretch",
@@ -50,6 +56,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundBlendMode: "darken",
     boxShadow: "1px 5px 5px rgba(0, 0, 0, 0.25)",
     borderRadius: "9px",
+
+    [theme.breakpoints.down("sm")]: {
+      height: "100%",
+      width: "fit-content",
+    },
   },
   resume1: {
     width: "400px",
@@ -159,7 +170,7 @@ const Register = () => {
             value={formState.username}
             onChange={handleChange}
           />
-         
+
           <input
             className={classes.input}
             placeholder="Your email"

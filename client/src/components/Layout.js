@@ -7,6 +7,12 @@ const useStyles = makeStyles((theme) => ({
   main: {
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(2),
+    [theme.breakpoints.down("sm")]: {
+      width: '100%',
+      border: '1px solid red',
+      display: 'flex',
+      justifyContent: 'center',
+    },
   },
     footer: {
         display: "flex",
