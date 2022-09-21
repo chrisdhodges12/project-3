@@ -1,18 +1,17 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import {  Box, Grid } from "@material-ui/core";
+import { Box, Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import ReactToPdf from "react-to-pdf";
 import "./resumeStyle.css";
 const ref = React.createRef();
 
+const ResumeTemplate = ({ resumes, educations, projects }) => {
+  // if (!resumes.length) {
+  //     return <h3> No resumes yet. Create one! </h3>;
 
-const ResumeTemplate = ({ resumes }) => {
-    // if (!resumes.length) {
-    //     return <h3> No resumes yet. Create one! </h3>;
-
-    return (
-          <div>
+  return (
+    <div>
       <div id="print" direction="column" container>
         {resumes &&
           resumes.map((resume) => (
@@ -73,6 +72,53 @@ const ResumeTemplate = ({ resumes }) => {
                   </ul>
                 </div>
               </div>
+
+              {educations &&
+                educations.map((education) => (
+                  <div className="education" key={[educations._id]}>
+                    <div className="box title">
+                      <h4>Education</h4>
+                    </div>
+                    <div className="box content">
+                      <ul>
+                        <li>
+                          <b>{education.firstFieldOfStudy}</b> <br />{" "}
+                          <i>{education.firstSchoolName}</i>{" "}
+                          {education.firstGraduateYear}
+                        </li>
+                        <li>
+                          <b>{education.secFieldOfStudy}</b> <br />{" "}
+                          <i>{education.secSchoolName}</i>{" "}
+                          {education.secGraduateYear}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+
+              {projects &&
+                projects.map((project) => (
+                  <div className="recent-work" key={[projects._id]}>
+                    <div className="box title">
+                      <h4>Work Experience</h4>
+                    </div>
+                    <div className="box content">
+                      <ul>
+                        <li>
+                          <b>{project.firstPosition}</b> <br />{" "}
+                          <i>{project.firstPastEmployer}</i>{" "}
+                          {project.firstDatesWorked}
+                        </li>
+                        <li>
+                          <b>{project.secPosition}</b> <br />{" "}
+                          <i>{project.secSchoolName}</i>{" "}
+                          {project.secGraduateYear}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+
               <br />
               <div className="Buttons">
                 <ReactToPdf
@@ -99,8 +145,7 @@ const ResumeTemplate = ({ resumes }) => {
         ;
       </div>
     </div>
-        
-    )    
+  );
 };
 
 export default ResumeTemplate;
