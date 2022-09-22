@@ -25,6 +25,14 @@ const userSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'Resume'
     }],
+    educations: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Education'
+  }],
+  projects: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Project'
+}],
   },
 
 );

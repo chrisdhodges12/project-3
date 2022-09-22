@@ -1,12 +1,12 @@
 import React from "react";
 // import Auth from '../utils/auth'
-import ResumeQuestions from "../components/ResumeQuestions";
+import ProjectQuestions from "../components/ProjectQuestions";
 import { useQuery } from "@apollo/client";
-import { QUERY_ME, QUERY_RESUMES } from "../utils/queries";
+import { QUERY_ME, QUERY_PROJECTS } from "../utils/queries";
 import Auth from "../utils/auth";
 import { NavLink } from "react-router-dom";
 
-const Home = () => {
+const Project = () => {
   const loggedIn = Auth.loggedIn();
 
   return (
@@ -14,11 +14,13 @@ const Home = () => {
       <div className="">
         {loggedIn ? (
           <div>
-            <ResumeQuestions />
+            <ProjectQuestions />
           </div>
         ) : (
           <NavLink to="/login">
-            <button type="redirect">Please Login or Sign Up to Build Your Resume!</button>
+            <button type="redirect">
+              Please Login or Sign Up to Build Your Resume!
+            </button>
           </NavLink>
         )}
       </div>
@@ -26,4 +28,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Project;

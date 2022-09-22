@@ -6,6 +6,8 @@ const typeDefs = gql`
     username: String!
     email: String!
     resumes: [Resume]
+    educations: [Education]
+    projects: [Project]
   }
   type Resume {
     _id: ID
@@ -15,12 +17,24 @@ const typeDefs = gql`
     email: String
     phone: String
     objectiveStatement: String
-    schoolName: String
-    graduateYear: String
-    fieldOfStudy: String
-    pastEmployer: String
-    datesWorked: String
-    position: String
+  }
+  type Education {
+    _id: ID
+    firstSchoolName: String
+    firstGraduateYear: String
+    firstFieldOfStudy: String
+    secSchoolName: String
+    secGraduateYear: String
+    secFieldOfStudy: String
+  }
+  type Project {
+    _id: ID
+    firstPastEmployer: String
+    firstDatesWorked: String
+    firstPosition: String
+    secPastEmployer: String
+    secDatesWorked: String
+    secPosition: String
   }
   type Query {
     me: User
@@ -28,24 +42,38 @@ const typeDefs = gql`
     user(username: String!): User
     resumes(username: String!): [Resume]
     resume(_id: ID): Resume
+    educations(username: String!): [Education]
+    education(_id: ID): Education
+    projects(username: String!): [Project]
+    project(_id: ID): Project
   }
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     updateResume(
       username: String
-      firstName: String,
-      lastName: String,
-      email: String,
-      phone: String,
-      objectiveStatement: String,
-      schoolName: String,
-      graduateYear: String,
-      fieldOfStudy: String,
-      pastEmployer: String,
-      datesWorked: String,
-      position: String
+      firstName: String
+      lastName: String
+      email: String
+      phone: String
+      objectiveStatement: String
     ): Resume
+    updateEducation(
+      firstSchoolName: String
+      firstGraduateYear: String
+      firstFieldOfStudy: String
+      secSchoolName: String
+      secGraduateYear: String
+      secFieldOfStudy: String
+    ): Education
+    updateProject(
+      firstPastEmployer: String
+      firstDatesWorked: String
+      firstPosition: String
+      secPastEmployer: String
+      secDatesWorked: String
+      secPosition: String
+    ): Project
   }
   type Auth {
     token: ID!

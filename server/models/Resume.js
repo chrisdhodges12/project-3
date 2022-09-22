@@ -19,24 +19,6 @@ const resumeSchema = new Schema({
   objectiveStatement: {
     type: String,
   },
-  schoolName: {
-    type: String,
-  },
-  graduateYear: {
-    type: String,
-  },
-  fieldOfStudy: {
-    type: String,
-  },
-  pastEmployer: {
-    type: String,
-  },
-  datesWorked: {
-    type: String,
-  },
-  position: {
-    type: String,
-  }
 });
 
 const Resume = model("Resume", resumeSchema);

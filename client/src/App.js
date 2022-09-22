@@ -11,6 +11,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import Education from "./pages/Education";
+import Project from "./pages/Project";
 // import Header from "./components/Header";
 
 import {
@@ -43,19 +45,19 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
-
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
-            {/* <Route path="/resume/:id" element={<SingleResume />} /> */}
-          </Routes>
-        </Layout>
-      </Router>
-
+        <Router>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/education" element={<Education />} />
+              <Route path="/project" element={<Project />} />
+              {/* <Route path="/resume/:id" element={<SingleResume />} /> */}
+            </Routes>
+          </Layout>
+        </Router>
       </ThemeProvider>
     </ApolloProvider>
   );
