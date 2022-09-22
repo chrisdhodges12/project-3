@@ -104,7 +104,12 @@ const Template1 = ({ resumes, educations, projects }) => {
               </div>
 
               <br />
-              <div className="Buttons">
+           
+            </div>
+          ))}
+           
+      </div>
+      <div className="Buttons">
                 <ReactToPdf
                   targetRef={ref}
                   filename={`Resume-${resumes.firstName}.pdf`}
@@ -124,10 +129,6 @@ const Template1 = ({ resumes, educations, projects }) => {
                   )}
                 </ReactToPdf>
               </div>
-            </div>
-          ))}
-        ;
-      </div>
     </div>
   );
 };
