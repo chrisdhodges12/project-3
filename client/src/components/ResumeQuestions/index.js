@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { useMutation } from "@apollo/client";
 import { UPDATE_RESUME } from "../../utils/mutations";
-import { QUERY_RESUMES, QUERY_ME } from "../../utils/queries";
 
 const ResumeQuestions = (props) => {
   const [formState, setFormState] = useState({
@@ -19,7 +18,7 @@ const ResumeQuestions = (props) => {
     position: "",
   });
 
-  const [updateResume, { error }] = useMutation(UPDATE_RESUME);
+  const [updateResume] = useMutation(UPDATE_RESUME);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
