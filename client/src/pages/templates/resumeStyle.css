@@ -1,0 +1,229 @@
+@media only screen and (min-width: 950px) {
+    .container {
+        font-size: 1.15rem;
+    }
+}
+
+@media only screen and (min-width: 625px) {
+    .title {
+        text-align: right;
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+    }
+}
+
+@media only screen and (max-width: 625px) {
+    .title {
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+}
+
+body {
+    background-color: #FFFFFF;
+}
+/* 
+h1 {
+    color: #383838;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+h3 {
+    color: #696969;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 100%;
+}
+
+h4 {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 90%;
+}
+  
+h5 {
+    color: #696969;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 80%;
+}  
+*/
+span {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 80%;
+    line-height: 0.5;
+} 
+
+.personal-information ul {
+    color: white;
+    list-style-type: none;
+    margin-left: -35px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 80%;
+    line-height: 2.25;
+}
+
+.personal-information ul > li::before {
+    font-family: "FontAwesome";
+    content: "\f058";
+    padding-right: 5px;
+}
+
+.education ul {
+    color: white;
+    list-style-type: none;
+    margin-left: -35px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 80%;
+    line-height: 2.25;
+  } 
+  
+  .recent-work ul {
+    color: white;
+    list-style-type: none;
+    margin-left: -35px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 80%;
+    line-height: 2.25;
+  } 
+  
+  .projects ul {
+    color: white;
+    list-style-type: none;
+    margin-left: -35px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 80%;
+    line-height: 2.25;
+  } 
+
+  .skills ul {
+    color: white;
+    list-style-type: none;
+    margin-left: -35px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 80%;
+    line-height: 2.25;
+  } 
+  
+/*   
+a {
+    color: white;
+    background-color: rgba(0, 0, 255, 0);
+    transition: 0.5s ease all;
+} */
+
+.container {
+    margin-top: 50px;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px 5px;
+    max-width: 750px;
+}
+
+.head-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.head {
+    flex: 1 1 auto;
+    width: 100%;
+    margin-top:35px;
+    padding: 25px;
+    background-color: #CDF0EA;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+.personal-information {
+    padding: 25px;
+    background-color: #97C4B8;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.education {
+    padding: 25px;
+    background-color: #66b2b2;
+    display: flex;
+    flex-wrap: wrap;
+}      
+           
+.recent-work {
+    padding: 25px;
+    background-color: #069A8E;
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.projects {
+    padding: 25px;
+    background-color: #008080;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills {
+    padding: 25px;
+    background-color: #006666;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title {
+    padding: 0 20px;
+    flex: 1 1 100px;
+}
+
+.content {
+    padding-left: 60px;
+    padding-right: 20px;
+    flex: 2 2 350px;
+}
+  
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+  .class-1{
+    padding-right: 70px;
+  }
+
+  .Buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .closeButton {
+    margin: 0 10px;
+    margin-top: 20px;
+  }
+
+  .backButton {
+    margin: 0 10px;
+    margin-top: 20px;
+  }
+
+  .pdfButton {
+    margin: 0 10px;
+    margin-top: 20px;
+  }

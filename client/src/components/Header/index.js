@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
     menuButton: {
       display: "none",
-    }
+    },
   },
 }));
 
@@ -75,15 +75,14 @@ function Header() {
         >
           RB
         </Typography>
-        <Button color='error'
-        className={classes.menuButton}
+        <Button
+          color="error"
+          className={classes.menuButton}
           id="basic-button"
-          
           aria-controls={open ? "basic-menu" : undefined}
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
           onClick={handleClick}
-          
         >
           <MenuIcon
             sx={{
@@ -92,9 +91,9 @@ function Header() {
             }}
           />
         </Button>
-        
-          {Auth.loggedIn() ? (
-            <Menu
+
+        {Auth.loggedIn() ? (
+          <Menu
             id="basic-menu"
             anchorEl={anchorEl}
             open={open}
@@ -103,43 +102,40 @@ function Header() {
               "aria-labelledby": "basic-button",
             }}
           >
-              <NavLink to="/">
-                <MenuItem onClick={handleClose}>Home</MenuItem>
-              </NavLink>
-              {/* <NavLink to="/dashboard">
+            <NavLink to="/">
+              <MenuItem onClick={handleClose}>Home</MenuItem>
+            </NavLink>
+            {/* <NavLink to="/dashboard">
             <MenuItem onClick={handleClose}>Dashboard</MenuItem>
           </NavLink> */}
-              <NavLink to="/profile">
-                <MenuItem onClick={handleClose}>Resume</MenuItem>
-              </NavLink>
-              <NavLink to="/">
-                <MenuItem onClick={handleClose && logout}>Logout</MenuItem>
-              </NavLink>
-              </Menu>
-          ) : (
-            <Menu
-          id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            "aria-labelledby": "basic-button",
-          }}
-        >
-              <NavLink to="/login">
-                <MenuItem>Login</MenuItem>
-              </NavLink>
-              <NavLink to="/register">
-                <MenuItem>Signup</MenuItem>
-              </NavLink>
-              </Menu>
-          )}
-       
+            <NavLink to="/design">
+              <MenuItem onClick={handleClose}>Resume Templates</MenuItem>
+            </NavLink>
+            <NavLink to="/">
+              <MenuItem onClick={handleClose && logout}>Logout</MenuItem>
+            </NavLink>
+          </Menu>
+        ) : (
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <NavLink to="/login">
+              <MenuItem>Login</MenuItem>
+            </NavLink>
+            <NavLink to="/register">
+              <MenuItem>Signup</MenuItem>
+            </NavLink>
+          </Menu>
+        )}
       </Toolbar>
     </AppBar>
   );
 }
 
 export default Header;
-
-

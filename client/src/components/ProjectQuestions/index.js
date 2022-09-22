@@ -108,7 +108,7 @@ const ProjectQuestions = (props) => {
     } catch (e) {
       console.error(e);
     }
-    window.location.assign("/profile");
+    window.location.assign("/design");
   };
   const classes = useStyles();
   return (
