@@ -2,11 +2,8 @@ import React, { useState } from "react";
 
 import { useMutation } from "@apollo/client";
 import { UPDATE_RESUME } from "../../utils/mutations";
-<<<<<<< HEAD
 import { QUERY_RESUMES, QUERY_ME } from "../../utils/queries";
 import { makeStyles, Typography, Grid } from "@material-ui/core";
-=======
->>>>>>> main
 
 const useStyles = makeStyles((theme) => ({
   mainBox: {
