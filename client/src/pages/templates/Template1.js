@@ -18,17 +18,16 @@ const Template1 = ({ resumes, educations, projects }) => {
               <div key={[resume._id]}>
                 <div className="top d-flex justify-content-between">
                   <h1>
-                    {resume.firstName.toUpperCase()}{" "}
-                    {resume.lastName.toUpperCase()}
+                    {resume.firstName} {resume.lastName}
                   </h1>
                   <div>
                     <p>
-                      <b>Email : {" "} </b>
+                      <b>Email : </b>
                       {resume.email}
                     </p>
                     <br />
                     <p>
-                      <b>Phone Number : {" "} </b>
+                      <b>Phone Number : </b>
                       {resume.phone}
                     </p>
                   </div>
@@ -104,31 +103,34 @@ const Template1 = ({ resumes, educations, projects }) => {
               </div>
 
               <br />
-           
             </div>
           ))}
-           
       </div>
       <div className="Buttons">
-                <ReactToPdf
-                  targetRef={ref}
-                  filename={`Resume-${resumes.firstName}.pdf`}
-                  x={5}
-                >
-                  {({ toPdf }) => (
-                    <div className="pdfButton">
-                      <Button
-                        color="secondary"
-                        variant="contained"
-                        sx={{ ml: 3 }}
-                        onClick={toPdf}
-                      >
-                        Generate PDF
-                      </Button>
-                    </div>
-                  )}
-                </ReactToPdf>
-              </div>
+        <ReactToPdf
+          targetRef={ref}
+          filename='Resume.pdf'
+          x={5}
+        >
+          {({ toPdf }) => (
+            <div className="pdfButton">
+              <Button
+                color="secondary"
+                variant="contained"
+                sx={{ ml: 3 }}
+                onClick={toPdf}
+                style={{
+                  minWidth: "13vw",
+                  minHeight: "4vh",
+                  fontSize: "2rem",
+                }}
+              >
+                Generate PDF
+              </Button>
+            </div>
+          )}
+        </ReactToPdf>
+      </div>
     </div>
   );
 };
