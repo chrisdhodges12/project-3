@@ -32,12 +32,6 @@ export const UPDATE_RESUME = gql`
     $email: String
     $phone: String
     $objectiveStatement: String
-    $schoolName: String
-    $graduateYear: String
-    $fieldOfStudy: String
-    $pastEmployer: String
-    $datesWorked: String
-    $position: String
   ) {
     updateResume(
       username: $username
@@ -46,12 +40,6 @@ export const UPDATE_RESUME = gql`
       email: $email
       phone: $phone
       objectiveStatement: $objectiveStatement
-      schoolName: $schoolName
-      graduateYear: $graduateYear
-      fieldOfStudy: $fieldOfStudy
-      pastEmployer: $pastEmployer
-      datesWorked: $datesWorked
-      position: $position
     ) {
       _id
       username
@@ -60,12 +48,6 @@ export const UPDATE_RESUME = gql`
       email
       phone
       objectiveStatement
-      schoolName
-      graduateYear
-      fieldOfStudy
-      pastEmployer
-      datesWorked
-      position
     }
   }
 `;

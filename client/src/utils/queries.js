@@ -11,12 +11,6 @@ export const QUERY_RESUMES = gql`
       email
       phone
       objectiveStatement
-      schoolName
-      graduateYear
-      fieldOfStudy
-      pastEmployer
-      datesWorked
-      position
     }
   }
 `;
@@ -32,12 +26,6 @@ export const QUERY_RESUME = gql`
       email
       phone
       objectiveStatement
-      schoolName
-      graduateYear
-      fieldOfStudy
-      pastEmployer
-      datesWorked
-      position
     }
   }
 `;
@@ -117,12 +105,6 @@ export const QUERY_USER = gql`
         email
         phone
         objectiveStatement
-        schoolName
-        graduateYear
-        fieldOfStudy
-        pastEmployer
-        datesWorked
-        position
       }
       educations {
         _id
@@ -160,12 +142,6 @@ export const QUERY_ME = gql`
         email
         phone
         objectiveStatement
-        schoolName
-        graduateYear
-        fieldOfStudy
-        pastEmployer
-        datesWorked
-        position
       }
       educations {
         _id

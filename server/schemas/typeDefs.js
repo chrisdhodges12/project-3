@@ -17,12 +17,6 @@ const typeDefs = gql`
     email: String
     phone: String
     objectiveStatement: String
-    schoolName: String
-    graduateYear: String
-    fieldOfStudy: String
-    pastEmployer: String
-    datesWorked: String
-    position: String
   }
   type Education {
     _id: ID
@@ -63,12 +57,6 @@ const typeDefs = gql`
       email: String
       phone: String
       objectiveStatement: String
-      schoolName: String
-      graduateYear: String
-      fieldOfStudy: String
-      pastEmployer: String
-      datesWorked: String
-      position: String
     ): Resume
     updateEducation(
       firstSchoolName: String

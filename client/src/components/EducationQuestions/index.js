@@ -103,7 +103,7 @@ const EducationQuestions = (props) => {
           onChange={handleChange}
         ></input>
         <button className="" type="submit">
-          Submit
+          Next
         </button>
       </form>
     </div>

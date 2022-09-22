@@ -46,7 +46,7 @@ const ResumeTemplate = ({ resumes, educations, projects }) => {
                   </div>
                 </div>
               </div>
-              <div className="education">
+              {/* <div className="education">
                 <div className="box title">
                   <h4>Education</h4>
                 </div>
@@ -71,15 +71,15 @@ const ResumeTemplate = ({ resumes, educations, projects }) => {
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> */}
 
-              {educations &&
-                educations.map((education) => (
-                  <div className="education" key={[educations._id]}>
-                    <div className="box title">
-                      <h4>Education</h4>
-                    </div>
-                    <div className="box content">
+              <div className="education" key={[educations._id]}>
+                <div className="box title">
+                  <h4>Education</h4>
+                </div>
+                <div className="box content">
+                  {educations &&
+                    educations.map((education) => (
                       <ul>
                         <li>
                           <b>{education.firstFieldOfStudy}</b> <br />{" "}
@@ -92,17 +92,17 @@ const ResumeTemplate = ({ resumes, educations, projects }) => {
                           {education.secGraduateYear}
                         </li>
                       </ul>
-                    </div>
-                  </div>
-                ))}
+                    ))}
+                </div>
+              </div>
 
-              {projects &&
-                projects.map((project) => (
-                  <div className="recent-work" key={[projects._id]}>
-                    <div className="box title">
-                      <h4>Work Experience</h4>
-                    </div>
-                    <div className="box content">
+              <div className="recent-work" key={[projects._id]}>
+                <div className="box title">
+                  <h4>Work Experience</h4>
+                </div>
+                <div className="box content">
+                  {projects &&
+                    projects.map((project) => (
                       <ul>
                         <li>
                           <b>{project.firstPosition}</b> <br />{" "}
@@ -115,9 +115,9 @@ const ResumeTemplate = ({ resumes, educations, projects }) => {
                           {project.secGraduateYear}
                         </li>
                       </ul>
-                    </div>
-                  </div>
-                ))}
+                    ))}
+                </div>
+              </div>
 
               <br />
               <div className="Buttons">

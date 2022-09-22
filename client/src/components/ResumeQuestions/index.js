@@ -98,7 +98,7 @@ const ResumeQuestions = (props) => {
           value={formState.objectiveStatement}
           onChange={handleChange}
         ></input>
-        <input
+        {/* <input
           className=""
           placeholder="School Name"
           name="schoolName"
@@ -151,9 +151,9 @@ const ResumeQuestions = (props) => {
           id="position"
           value={formState.position}
           onChange={handleChange}
-        ></input>
+        ></input> */}
         <button className="" type="submit">
-          Submit
+          Next
         </button>
       </form>
     </div>
