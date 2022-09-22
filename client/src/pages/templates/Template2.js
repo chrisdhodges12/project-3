@@ -90,15 +90,13 @@ const Template2 = ({ resumes, educations, projects }) => {
                     ))}
                 </div>
               </div>
-
               <br />
-              
             </div>
           ))}
         <div className="Buttons">
                 <ReactToPdf
                   targetRef={ref}
-                  filename={`Resume-${resumes.firstName}.pdf`}
+                  filename='Resume.pdf'
                   x={5}
                 >
                   {({ toPdf }) => (
@@ -106,8 +104,13 @@ const Template2 = ({ resumes, educations, projects }) => {
                       <Button
                         color="secondary"
                         variant="contained"
-                        sx={{ ml: 3 }}
+                        sx={{ ml: 5 }}
                         onClick={toPdf}
+                        style={{
+                          minWidth: "13vw",
+                          minHeight: "4vh",
+                          fontSize: "2rem"
+                        }}
                       >
                         Generate PDF
                       </Button>
