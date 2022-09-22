@@ -13,6 +13,8 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Education from "./pages/Education";
 import Project from "./pages/Project";
+import Templates from "./pages/templates";
+import TemplateDesign from "./pages/TemplateDesign";
 // import Header from "./components/Header";
 
 import {
@@ -54,6 +56,8 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/education" element={<Education />} />
               <Route path="/project" element={<Project />} />
+              <Route path="/design" element={<TemplateDesign />} />
+              <Route path="/templates/:id" element={<Templates />} />
               {/* <Route path="/resume/:id" element={<SingleResume />} /> */}
             </Routes>
           </Layout>
