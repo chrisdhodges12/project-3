@@ -123,6 +123,7 @@ const Template1 = ({ resumes, educations, projects }) => {
                   minWidth: "13vw",
                   minHeight: "4vh",
                   fontSize: "2rem",
+                  padding: "1rem"
                 }}
               >
                 Generate PDF
