@@ -84,10 +84,11 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: "normal",
     fontWeight: "600",
     fontSize: "20px",
+    cursor: "pointer",
   },
   submit: {
     fontFamily: "Dosis",
-
+    cursor: "pointer",
     color: "rgba(33, 99, 0, 0.888)",
   },
 }));
@@ -141,7 +142,15 @@ const Register = () => {
       </Grid>
       <form onSubmit={handleFormSubmit}>
         <Grid item xs={12} sm={12} md={6} lg={6} className={classes.loginCont}>
-          <h2>SignUp</h2>
+          <h2
+            style={{
+              fontFamily: "Dosis",
+              color: "white",
+              fontWeight: "500",
+            }}
+          >
+            Sign Up
+          </h2>
           <input
             className={classes.input}
             placeholder="Your Username"

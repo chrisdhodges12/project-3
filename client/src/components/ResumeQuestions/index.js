@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "9px",
     boxSizing: "border-box",
     border: "none",
-
+cursor: 'pointer',
     background:
       "linear-gradient(180deg, rgba(247, 199, 114, 0.89) 0%, rgba(245, 183, 0, 0.53) 100%)",
   },
