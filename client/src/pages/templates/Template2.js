@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { Box, Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import ReactToPdf from "react-to-pdf";
 import "./resumeStyle.css";
@@ -20,7 +19,7 @@ const Template2 = ({ resumes, educations, projects }) => {
                 <div className="head">
                   <h1>
                     {resume.firstName}
-                    {""}
+                    {" "}
                     {resume.lastName}
                   </h1>
                   <h3>{resume.email}</h3>
@@ -35,19 +34,19 @@ const Template2 = ({ resumes, educations, projects }) => {
                     <div className="class-1">
                       <ul>
                         <li>
-                          Name: {resume.firstName} {""}
+                          Name: {resume.firstName} {" "}
                           {resume.lastName}
                         </li>
                         <li>Email: {resume.email}</li>
                         <li>Phone: {resume.phone}</li>
                       </ul>
-                      <span> <b>Objective :</b>{resume.objectiveStatement}</span>
+                      <span> <b>Objective </b>{resume.objectiveStatement}</span>
                       <br/>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="education" key={[educations._id]}>
+              <div className="education" key={[educations._id]}> 
                 <div className="box title">
                   <h4>Education</h4>
                 </div>
