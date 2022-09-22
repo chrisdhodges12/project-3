@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 
 import ResumeTemplate from "../components/ResumeTemplate";
 
@@ -24,22 +24,25 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  return (
-    <div>
-      <div className="">
-        <h2 className="">{user.username}'s Resumes</h2>
-      </div>
 
-      <div className="flex-row justify-space-between mb-3">
-        <div className="col-12 mb-3 col-lg-8">
+return (
+  <main>
+    <div className="">
+      {loggedIn ? (
+        <div>
+          <h1> {user.username}'s Resumes! </h1>
           <ResumeTemplate
             resumes={user.resumes}
             educations={user.educations}
-            projects={user.projects}
-          />
+            projects={user.projects}/>
         </div>
-      </div>
+      ) : (
+        <NavLink to="/login">
+          <button type="redirect">Please Login or Sign Up to Build Your Resume!</button>
+        </NavLink>
+      )}
     </div>
+  </main>
   );
 };
 

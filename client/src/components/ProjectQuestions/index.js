@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { useMutation } from "@apollo/client";
 import { UPDATE_PROJECT } from "../../utils/mutations";
-import { QUERY_PROJECTS, QUERY_ME } from "../../utils/queries";
 
 import { makeStyles, Typography, Grid } from "@material-ui/core";
 
@@ -84,7 +83,7 @@ const ProjectQuestions = (props) => {
     secPosition: "",
   });
 
-  const [updateProject, { error }] = useMutation(UPDATE_PROJECT);
+  const [updateProject] = useMutation(UPDATE_PROJECT);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -98,8 +97,7 @@ const ProjectQuestions = (props) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    //    console.log(setFormState.position);
-    //    console.log(formState.lastName);
+ 
 
     try {
       await updateProject({

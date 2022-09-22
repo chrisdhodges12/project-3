@@ -1,14 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { Box, Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import ReactToPdf from "react-to-pdf";
 import "./resumeStyle.css";
 const ref = React.createRef();
 
 const ResumeTemplate = ({ resumes, educations, projects }) => {
-  // if (!resumes.length) {
-  //     return <h3> No resumes yet. Create one! </h3>;
+//   if (!resumes.length) {
+//       return <h3> No resumes yet. Create one! </h3>;
 
   return (
     <div>
@@ -20,7 +19,7 @@ const ResumeTemplate = ({ resumes, educations, projects }) => {
                 <div className="head">
                   <h1>
                     {resume.firstName}
-                    {""}
+                    {" "}
                     {resume.lastName}
                   </h1>
                   <h3>{resume.email}</h3>
@@ -46,32 +45,6 @@ const ResumeTemplate = ({ resumes, educations, projects }) => {
                   </div>
                 </div>
               </div>
-              {/* <div className="education">
-                <div className="box title">
-                  <h4>Education</h4>
-                </div>
-                <div className="box content">
-                  <ul>
-                    <li>
-                      <b>{resume.fieldOfStudy}</b> <br />{" "}
-                      <i>{resume.schoolName}</i> {resume.graduateYear}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="recent-work">
-                <div className="box title">
-                  <h4>Work Experience</h4>
-                </div>
-                <div className="box content">
-                  <ul>
-                    <li>
-                      <b>{resume.position}</b> <br />{" "}
-                      <i>{resume.pastEmployer}</i> {resume.datesWorked}
-                    </li>
-                  </ul>
-                </div>
-              </div> */}
 
               <div className="education" key={[educations._id]}>
                 <div className="box title">
@@ -142,7 +115,6 @@ const ResumeTemplate = ({ resumes, educations, projects }) => {
               </div>
             </div>
           ))}
-        ;
       </div>
     </div>
   );
