@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { useMutation } from "@apollo/client";
 import { UPDATE_RESUME } from "../../utils/mutations";
-import { QUERY_RESUMES, QUERY_ME } from "../../utils/queries";
 import { makeStyles, Typography, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({

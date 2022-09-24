@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { useMutation } from "@apollo/client";
 import { UPDATE_EDUCATION } from "../../utils/mutations";
-import { QUERY_EDUCATIONS, QUERY_ME } from "../../utils/queries";
 import { makeStyles, Typography, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -83,7 +82,7 @@ const EducationQuestions = (props) => {
     secFieldOfStudy: "",
   });
 
-  const [updateEducation, { error }] = useMutation(UPDATE_EDUCATION);
+  const [updateEducation] = useMutation(UPDATE_EDUCATION);
 
   const handleChange = (event) => {
     const { name, value } = event.target;

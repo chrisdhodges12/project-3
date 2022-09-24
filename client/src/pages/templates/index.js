@@ -4,9 +4,8 @@ import Template1 from "./Template1";
 import Template2 from "./Template2";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
-import Auth from "../../utils/auth";
 function Templates() {
-  const loggedIn = Auth.loggedIn();
+
   const params = useParams();
 
   const { username: userParam } = useParams();

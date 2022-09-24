@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
 import { NavLink } from "react-router-dom";
 import {
@@ -105,9 +104,6 @@ function Header() {
             <NavLink to="/">
               <MenuItem onClick={handleClose}>Home</MenuItem>
             </NavLink>
-            {/* <NavLink to="/dashboard">
-            <MenuItem onClick={handleClose}>Dashboard</MenuItem>
-          </NavLink> */}
             <NavLink to="/design">
               <MenuItem onClick={handleClose}>Resume Templates</MenuItem>
             </NavLink>

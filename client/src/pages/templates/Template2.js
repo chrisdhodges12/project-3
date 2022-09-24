@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from "react";
 import Button from "@material-ui/core/Button";
 import ReactToPdf from "react-to-pdf";
