@@ -4,13 +4,11 @@ import {
   Grid,
   Typography,
   Box,
-  Button,
   makeStyles,
 } from "@material-ui/core";
 import { Image } from "mui-image";
 import templateimg from "../resources/template1.png";
 import template2img from "../resources/template2.png";
-// import "../resources/templates.css";
 import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -98,8 +96,6 @@ function TemplateDesign() {
                 />
               </Box>
             </Container>
-            {/* <div className="text">
-                  <p>{template.title}</p> */}
             <Box className={classes.buttonCont}>
               <button
                 onClick={() => navigate(`/templates/${index + 1}`)}

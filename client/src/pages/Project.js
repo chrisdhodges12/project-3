@@ -1,8 +1,5 @@
 import React from "react";
-// import Auth from '../utils/auth'
 import ProjectQuestions from "../components/ProjectQuestions";
-import { useQuery } from "@apollo/client";
-import { QUERY_ME, QUERY_PROJECTS } from "../utils/queries";
 import Auth from "../utils/auth";
 import { NavLink } from "react-router-dom";
 
