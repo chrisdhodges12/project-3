@@ -52,5 +52,7 @@ Developed by:
 ## Questions
 For any questions, contact me at chrisdhodges12@gmail.com or find us on GitHub.
 
+* GitHub Repo: https://github.com/chrisdhodges12/resume-builder
+
 
 
